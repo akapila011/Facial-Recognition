@@ -75,6 +75,13 @@ identities provided it will show the name and the percentage acurracy in the win
 You could try increase resolution and input sizes. You could also try use a different model
 to see how it affects the accuracy.*
 
+### Installation
+
+In the project directory run the following command to get all dependencies
+```bash
+$> pip3 install -r requirements.txt
+```
+
 #### Requirements
 
 * Python 3.6
