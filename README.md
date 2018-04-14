@@ -1,6 +1,6 @@
 # Facial Recognition
 
-<!-- <img src="resources/facial-recognition-icon-100.png" alt="facial-recognition-icon"/> -->
+ <img src="resources/facial-recognition-icon-100.png" alt="facial-recognition-icon"/>
 
 Easily use your own facial recongition system in python with flexibility.
 You can also easily modify the components used to try and improve on the
@@ -21,7 +21,7 @@ between the input encoding and the database encoding is lower than a set thresho
 then we have a match.
 
 
-<!-- <img src="resources/face-numbers.png" alt="face-to-tensor" width="800" height="450"/> -->
+ <img src="resources/face-numbers.png" alt="face-to-tensor" width="800" height="450"/>
 
 
 ## How to Use
@@ -51,6 +51,16 @@ This will update the identities that will be recognized later. When this stage
 completes you will find a database.pickle in the database folder within your
 project directory. The database.pickle file is needed for the next stage.
 Once it is done refreshing you should get a notification that refreshing has completed.
+
+This script also accepts the '--use_avg' argument. When used it means that when
+there are multiple images in a folder (which represents a person) then it will take the
+encodings for all images and average it to get a 1x128 tensor with average values.
+If this flag is ommited it will default to storing encodings for all images in each folder
+and so 1 person may have multiple encodings. You might want to use the --use_avg flag in
+order to reduce running time to perform comparisions. You can use this flag by running the script as follows:
+```bash
+$> python3 refresh_database.py --use_avg
+```
 
 4. **Facial Recognition:** That's it! You're now all setup to run the facial recognition
 system. Run:
