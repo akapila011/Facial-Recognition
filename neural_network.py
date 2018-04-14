@@ -7,7 +7,6 @@ import tensorflow as tf
 from fr_utils import *
 from inception_blocks_v2 import *
 from keras import backend as K
-from keras.models import load_model
 import pickle
 
 MODULE_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
@@ -88,7 +87,7 @@ def prepare_database(use_avg=False):
                                      axis=0)  # find average for each value in the vector, maintains shape of original encoding
                     encodings = [avg]
                 database[name] = encodings
-                print(f"Entry for {name} added")
+                print(f"Facial Recognition: Entry for {name} added to database")
     return database
 
 

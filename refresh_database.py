@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import pickle
-from neural_network import prepare_database, triplet_loss, who_is_it, DATABASE_PATH
+from neural_network import prepare_database, triplet_loss, who_is_it, DATABASE_PATH, MODULE_DIR_PATH
 
 create_notification = False
 try:   # only create notification if module present

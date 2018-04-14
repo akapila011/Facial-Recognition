@@ -1,8 +1,10 @@
 # Facial Recognition
 
+<!-- <img src="resources/facial-recognition-icon-100.png" alt="facial-recognition-icon"/> -->
+
 Easily use your own facial recongition system in python with flexibility.
 You can also easily modify the components used to try and improve on the
-accuracy of the recognition system.
+accuracy of the recognition system. Currently, the system can achieve 85% accuracy.
 
 Facial recognition can be useful for a wide range of categories including
 access control and security. This system is very easy to modify for use
@@ -17,6 +19,10 @@ program new images (of detected faces) are passed through the model and
 their values compared with encodings stored in the 'database'. When the distance
 between the input encoding and the database encoding is lower than a set threshold
 then we have a match.
+
+
+<!-- <img src="resources/face-numbers.png" alt="face-to-tensor" width="800" height="450"/> -->
+
 
 ## How to Use
 
@@ -56,7 +62,7 @@ with a feed from your webcamera. When the system recognizes any of the various
 identities provided it will show the name and the percentage acurracy in the window.
 
 *You can try modify the program by trying different parameters to improve accuracy.
-You could try save pictures as grayscale. You could also try use a different model
+You could try increase resolution and input sizes. You could also try use a different model
 to see how it affects the accuracy.*
 
 #### Requirements
@@ -65,4 +71,23 @@ to see how it affects the accuracy.*
 * OpenCV (python)
 * Tensorflow
 * Keras
-* (*optional*) plyer (pip install plyer - used to produce a notification when long running tasks complete)
+* (*optional*) plyer (pip install -I https://github.com/kivy/plyer/zipball/master - used to produce a notification when long running tasks complete)
+
+#### To Modify
+
+If you wish to modify the program to achieve better accuracy you may want to concentrate on the following files:
+
+* fr_utils.py - This is where the architecture of the model is defined and where some utility functions are located
+ such as encoding images.
+* neural_network.py - This is where the model is loaded and provides some utility functions such as creating/loading the database
+
+**Note:**
+The current model requires an input of shape 3x96x96 (channel, width, height).
+It uses the TensorFlow format for input (channels first). If you use the Theano backend you will need to modify
+the input shape in the fr_utils.py. The current model also outputs a 1x128 tensor for an image.
+If you wish to modify the input shape and/or output shape you will need to change the
+parameters in fr_utils.py and neural_network; particularly the functions producing the encoding.
+
+#### To learn more:
+
+https://www.coursera.org/learn/convolutional-neural-networks/lecture/lUBYU/what-is-face-recognition
