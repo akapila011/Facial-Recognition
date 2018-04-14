@@ -65,4 +65,4 @@ to see how it affects the accuracy.*
 * OpenCV (python)
 * Tensorflow
 * Keras
-* plyer (pip install plyer) (used to produce a notification when long tasks complete)
+* (*optional*) plyer (pip install plyer - used to produce a notification when long running tasks complete)
